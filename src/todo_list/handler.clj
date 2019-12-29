@@ -15,8 +15,8 @@
   (POST "/api/todos" {:keys [params]}
         (let [{:keys [title description]} params]
           (response (repository/add-todo title description))))
-  (PUT "/api/todos/:id" [id title is_complete]
-       (response (repository/update-todo (Integer/parseInt id) title is_complete)))
+  (PUT "/api/todos/:id" [id title description]
+       (response (repository/update-todo (Integer/parseInt id) title description)))
   (DELETE "/api/todos/:id" [id]
           (response (repository/delete-todo (Integer/parseInt id))))
   (route/resources "/")

@@ -15,11 +15,12 @@
   (delete items
           (where {:id [= id]})))
 
-(defn update-todo [id title is-complete]
+(defn update-todo [id title description]
   (update items
           (set-fields {:title title
-                       :is_complete is-complete})
-          (where {:id [= id]})))
+                       :description description})
+          (where {:id [= id]}))
+  (select items (where {:id [= id]})))
 
 (defn get-todo [id]
   (first
