@@ -1,4 +1,4 @@
 FROM clojure:slim-buster
-COPY . /usr/src/app
-WORKDIR /usr/src/app
+COPY . /app
+WORKDIR /app
 CMD ["lein", "ring", "server-headless"]

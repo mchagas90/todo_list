@@ -8,6 +8,8 @@ services:
       - "3000:3000"
     networks:
       - mynet
+    volumes:
+      - .:/app
   db:
     image: mysql:8.0
     restart: always
