@@ -17,7 +17,7 @@ You will need [Leiningen][] 2.0.0 or above installed.
 
 Inside project root:
 
-    docker-compose up
+    docker-compose up --build
 
 Open another terminal tab and execute:
 
