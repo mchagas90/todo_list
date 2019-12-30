@@ -4,3 +4,5 @@ CREATE TABLE IF NOT EXISTS items (
    `description` varchar(255),
    PRIMARY KEY (`id`)
  );
+
+ ALTER USER 'root'@'%' IDENTIFIED WITH mysql_native_password BY 'toor';
