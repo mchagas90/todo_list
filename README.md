@@ -9,7 +9,7 @@ You will need [Leiningen][] 2.0.0 or above installed.
 
 ## Running
 
-####To start a web server for the application, run:
+#### To start a web server for the application, run:
 
     lein ring server
 
@@ -28,7 +28,7 @@ This will generate the necessary table for the code execution
 Server will be available at http://localhost:3000
 
 
-####Available endpoints:
+#### Available endpoints:
 
 ```
 GET localhost:3000/api/todos
