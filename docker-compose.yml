@@ -1,0 +1,33 @@
+version: '3'
+services:
+  web:
+    build: .
+    depends_on:
+      - db
+    ports:
+      - "3000:3000"
+    networks:
+      - mynet
+  db:
+    image: mysql:8.0
+    restart: always
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_ROOT_PASSWORD=toor
+      - MYSQL_USER=root
+      - MYSQL_PASSWORD=toor
+      - MYSQL_DATABASE=menagerie
+    volumes:
+      - mysqldata:/var/lib/mysql
+      - ./scripts_sql:/docker-entrypoint-initdb.d
+    networks:
+      - mynet
+
+volumes:
+  mysqldata:
+    driver: local
+
+networks: {mynet: {}}
+
+#  docker-compose exec db bash -c "mysql menagerie -uroot -ptoor < ./docker-entrypoint-initdb.d/init.sql"

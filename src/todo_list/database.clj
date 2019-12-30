@@ -6,7 +6,7 @@
    {:classname "com.mysql.jdbc.Driver"
     :subprotocol "mysql"
     :user "root"
-    :password "root"
+    :password "toor"
     :subname "//localhost:3306/menagerie"}))
 
 ; set up korma
