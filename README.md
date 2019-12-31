@@ -15,7 +15,7 @@ Inside project root:
 
     docker-compose up
 
-Open another terminal tab and execute:
+Open another terminal tab and execute (first run only):
 
     docker-compose exec db bash -c "mysql menagerie -uroot -ptoor < ./docker-entrypoint-initdb.d/init.sql"
 
