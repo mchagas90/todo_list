@@ -1,11 +1,10 @@
 (ns todo-list.handler
   (:require [compojure.core :refer :all]
-      [compojure.route :as route]
-      [ring.middleware.defaults :refer [wrap-defaults site-defaults]]
-      [compojure.handler :as handler]
-      [ring.middleware.json :as json]
-      [ring.util.response :refer [response]]
-      [todo-list.query :refer-list :all :as repository]))
+            [compojure.route :as route]
+            [compojure.handler :as handler]
+            [ring.util.response :refer [response]]
+            [todo-list.query :refer-list :all :as repository]
+            [ring.middleware.json :refer [wrap-json-response wrap-json-body]]))
 
 (defroutes app-routes
   (GET "/api/todos" []
@@ -24,5 +23,5 @@
 
 (def app
   (-> (handler/api app-routes)
-      (json/wrap-json-params)
-      (json/wrap-json-response)))
+      (wrap-json-response)
+      (wrap-json-body)))
