@@ -18,7 +18,7 @@
   (PUT "/api/todos/:id" [id title description]
        (response (repository/update-todo (Integer/parseInt id) title description)))
   (DELETE "/api/todos/:id" [id]
-          (response (repository/delete-todo (Integer/parseInt id))))
+          (response [(repository/delete-todo (Integer/parseInt id))]))
   (route/resources "/")
   (route/not-found "Not Found"))
 
